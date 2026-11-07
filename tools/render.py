@@ -26,6 +26,9 @@ Slide types (text in [[double brackets]] is shown in amber):
   {"type":"questions", "kicker":"...", "title":"...", "items":["...","..."], "note":"..."}  # 2-3 items
   {"type":"view",      "label":"My view", "title":"...", "body":"..."}
   {"type":"sources",   "kicker":"...", "title":"...", "items":[{"name":"...","date":"..."}], "note":"..."}
+
+Every "tt" slide may also carry "say": 1-3 short Nepali sentences read aloud by
+tools/make_video.py. The renderer ignores it.
 """
 import asyncio, html, json, pathlib, re, sys
 
