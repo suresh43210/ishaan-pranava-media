@@ -30,8 +30,14 @@ def duration(path):
 
 
 async def synth(text, voice, rate, path):
-    import edge_tts
-    await edge_tts.Communicate(text, voice, rate=rate).save(str(path))
+    import os, ssl
+    import edge_tts, edge_tts.communicate as comm
+    # Inside a proxied sandbox: trust its CA bundle and route through the proxy.
+    ca = os.environ.get("SSL_CERT_FILE") or os.environ.get("REQUESTS_CA_BUNDLE")
+    if ca and os.path.exists(ca):
+        comm._SSL_CTX = ssl.create_default_context(cafile=ca)
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    await edge_tts.Communicate(text, voice, rate=rate, proxy=proxy).save(str(path))
 
 
 def main():
