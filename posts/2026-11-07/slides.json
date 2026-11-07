@@ -1,0 +1,36 @@
+{
+  "series": {"ig": "Cyber Scam Response · Nepal", "tt": "साइबर ठगी प्रतिकार्य केन्द्र"},
+  "ig": [
+    {"type": "cover", "title": "Scammed online? Nepal now aims to freeze the money within [[60 minutes]].", "sub": "Inside the new Integrated Cyber Scam Response Centre."},
+    {"type": "bullets", "kicker": "Launched 6 Nov 2026", "title": "One room, every agency, 24 hours a day",
+     "items": [{"t": "Hotline 1247", "d": "Round-the-clock complaints"}, {"t": "Nepal Police Cyber Bureau", "d": "Hosts and leads the centre"}, {"t": "Banks, wallets, telecoms, ISPs", "d": "Their staff work from the same room"}]},
+    {"type": "timeline", "kicker": "The response clock", "title": "What should happen after a complaint",
+     "steps": [{"date": "Within 10 min", "text": "Complaint logged and prioritised", "done": true}, {"date": "10–30 min", "text": "Receiving account or wallet traced", "done": true}, {"date": "10–60 min", "text": "Freeze requested from bank or wallet", "done": true}, {"date": "Within 60 min", "text": "Scam SIMs cut, phishing sites blocked", "done": true}]},
+    {"type": "stat", "kicker": "Why it matters", "value": "Rs 4", "accent": "billion+", "body": "in alleged losses cited in complaints to the Cyber Bureau over the past three fiscal years.", "source": "Source: Republica, 29 Oct 2026 (police data)"},
+    {"type": "bullets", "kicker": "Who is in the room", "title": "114 staff in three shifts",
+     "items": [{"t": "20 Class A commercial banks", "d": "60 staff"}, {"t": "Nepal Police", "d": "33 staff"}, {"t": "eSewa, Khalti, Nepal Telecom, Ncell, NRB, ISPA, DBAN", "d": "The rest, across shifts"}]},
+    {"type": "compare", "kicker": "What changes", "title": "Minutes, not months",
+     "cards": [{"label": "BANKS & WALLETS", "head": "Act on freeze requests fast", "body": "Other BFIs, PSOs and PSPs must name 24/7 liaison officers (NRB notice)."}, {"label": "CUSTOMERS", "head": "Call 1247 first", "body": "The sooner it is reported, the better the chance the money is still there."}]},
+    {"type": "view", "label": "MY VIEW", "title": "Speed is the right goal.", "body": "Success now depends on finishing the case software and clear NRB rules to freeze — and quickly release — innocent accounts."},
+    {"type": "sources", "kicker": "Sources", "title": "Based on public information", "items": [{"name": "The Kathmandu Post", "date": "6 Nov 2026"}, {"name": "Onlinekhabar", "date": "5 Nov 2026"}, {"name": "Nagarik", "date": "6 Nov 2026"}, {"name": "Republica", "date": "29 Oct 2026"}], "note": "Views are personal. Not investment advice."}
+  ],
+  "tt": [
+    {"type": "cover", "title": "साइबर ठगी भयो? [[१२४७]] मा फोन गर्नुहोस्", "sub": "एकीकृत साइबर स्क्याम प्रतिकार्य केन्द्र सञ्चालनमा",
+     "say": "नमस्कार, म इशान प्रणव। अनलाइन ठगीमा पर्नुभयो भने, अब चौबीसै घण्टा, एक दुई चार सात नम्बरमा उजुरी दिन सकिन्छ।"},
+    {"type": "bullets", "kicker": "कार्तिक २०, २०८३ देखि", "title": "एउटै ठाउँबाट सबै निकाय",
+     "items": [{"t": "नेपाल प्रहरी साइबर ब्युरो", "d": "केन्द्रको नेतृत्व"}, {"t": "बैंक र डिजिटल वालेट", "d": "खाता र रकम रोक्का"}, {"t": "टेलिकम र इन्टरनेट सेवा प्रदायक", "d": "सिम र ठगी वेबसाइट बन्द"}],
+     "say": "कार्तिक बीस गतेदेखि, नेपाल प्रहरीको साइबर ब्युरोमा, यो केन्द्र सञ्चालनमा आएको छ। प्रहरी, राष्ट्र बैंक, बैंक, डिजिटल वालेट र टेलिकम कम्पनीका प्रतिनिधि, एउटै ठाउँबाट काम गर्छन्।"},
+    {"type": "timeline", "kicker": "उजुरीपछि के हुन्छ", "title": "कारबाहीको समयसीमा",
+     "steps": [{"date": "१० मिनेटभित्र", "text": "उजुरी दर्ता", "done": true}, {"date": "१०–३० मिनेट", "text": "पैसा गएको खाता पहिचान", "done": true}, {"date": "१०–६० मिनेट", "text": "रकम रोक्का अनुरोध", "done": true}],
+     "say": "उजुरी दस मिनेटभित्र दर्ता हुन्छ। तीस मिनेटभित्र, पैसा गएको खाता पहिचान गरिन्छ, र एक घण्टाभित्र, रकम रोक्का गर्न बैंक वा वालेटलाई अनुरोध पठाइन्छ।"},
+    {"type": "stat", "kicker": "किन आवश्यक", "value": "रु. ४", "accent": "अर्ब+", "body": "पछिल्ला तीन आर्थिक वर्षमा साइबर ब्युरोमा परेका उजुरीमा उल्लेखित ठगी रकम", "source": "स्रोत: रिपब्लिका, अक्टोबर २९, २०२६ (प्रहरीको तथ्यांक)",
+     "say": "प्रहरीको तथ्यांकअनुसार, पछिल्ला तीन आर्थिक वर्षमा, साइबर ठगीका उजुरीमा, चार अर्ब रुपैयाँभन्दा बढी रकम उल्लेख छ।"},
+    {"type": "bullets", "kicker": "बैंकरका लागि", "title": "बैंक र वित्तीय संस्थाको भूमिका",
+     "items": [{"t": "क वर्गका २० बैंकका प्रतिनिधि", "d": "केन्द्रमै, तीन सिफ्टमा"}, {"t": "अन्य संस्थाले २४ घण्टे सम्पर्क अधिकृत", "d": "राष्ट्र बैंकको निर्देशन"}],
+     "say": "क वर्गका बीसवटै बैंकका प्रतिनिधि, केन्द्रमै तीन सिफ्टमा बस्छन्। अरू बैंक, फाइनान्स कम्पनी र भुक्तानी कम्पनीलाई भने, राष्ट्र बैंकले चौबीसै घण्टा सम्पर्क अधिकृत तोक्न निर्देशन दिएको छ।"},
+    {"type": "view", "label": "मेरो दृष्टिकोण", "title": "छिटो कारबाही सही दिशा हो।", "body": "तर उजुरी सफ्टवेयर पूरा हुनुपर्छ, र निर्दोष खाता छिटो फुकुवा गर्ने स्पष्ट नियम चाहिन्छ।",
+     "say": "मेरो दृष्टिकोणमा, छिटो कारबाही सही दिशा हो। तर उजुरी व्यवस्थापन गर्ने सफ्टवेयर अझै पूरा भएको छैन। गल्तीले रोक्का भएका निर्दोष खाता, छिटो फुकुवा गर्ने स्पष्ट नियम पनि चाहिन्छ।"},
+    {"type": "sources", "kicker": "स्रोत", "title": "सार्वजनिक समाचारमा आधारित", "items": [{"name": "द काठमाडौं पोस्ट", "date": "नोभेम्बर ६, २०२६"}, {"name": "अनलाइनखबर", "date": "नोभेम्बर ५, २०२६"}, {"name": "नागरिक", "date": "कात्तिक २०, २०८३"}], "note": "विचार व्यक्तिगत हुन्। ठगी भए तुरुन्त १२४७ मा फोन गर्नुहोस्।",
+     "say": "यो जानकारी सार्वजनिक समाचारमा आधारित छ। ठगी भएमा, तुरुन्तै एक दुई चार सातमा फोन गर्नुहोस्। विचार व्यक्तिगत हुन्। तपाईंको प्रतिक्रिया तल लेख्नुहोस्।"}
+  ]
+}
