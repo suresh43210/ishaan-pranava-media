@@ -29,7 +29,7 @@ def duration(path):
     return float(out.stdout.strip())
 
 
-async def synth(text, voice, rate, path):
+async def synth(text, voice, rate, path, pitch="-4Hz"):
     import os, ssl
     import edge_tts, edge_tts.communicate as comm
     # Inside a proxied sandbox: trust its CA bundle and route through the proxy.
@@ -37,14 +37,15 @@ async def synth(text, voice, rate, path):
     if ca and os.path.exists(ca):
         comm._SSL_CTX = ssl.create_default_context(cafile=ca)
     proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
-    await edge_tts.Communicate(text, voice, rate=rate, proxy=proxy).save(str(path))
+    await edge_tts.Communicate(text, voice, rate=rate, pitch=pitch, proxy=proxy).save(str(path))
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("spec")
     ap.add_argument("--voice", default="ne-NP-SagarNeural", help="or ne-NP-HemkalaNeural")
-    ap.add_argument("--rate", default="+0%")
+    ap.add_argument("--rate", default="-8%")
+    ap.add_argument("--pitch", default="-4Hz")
     a = ap.parse_args()
 
     spec_path = pathlib.Path(a.spec).resolve()
@@ -70,7 +71,7 @@ def main():
                 print(f"missing {img.name}; run tools/render.py first"); return 1
             mp3 = tmp / f"n{i:02d}.mp3"
             try:
-                asyncio.run(synth(s["say"], a.voice, a.rate, mp3))
+                asyncio.run(synth(s["say"], a.voice, a.rate, mp3, a.pitch))
                 if mp3.stat().st_size == 0:
                     raise RuntimeError("empty audio")
             except Exception as e:
