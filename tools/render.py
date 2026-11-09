@@ -19,6 +19,7 @@ slides.json shape:
 }
 Slide types (text in [[double brackets]] is shown in amber):
   {"type":"cover",     "title":"...", "sub":"..."}
+  {"type":"photo",     "src":"photo.jpg", "title":"...", "sub":"..."}   # image file next to slides.json
   {"type":"bullets",   "kicker":"...", "title":"...", "items":[{"t":"...","d":"..."}]}      # 2-4 items
   {"type":"timeline",  "kicker":"...", "title":"...", "steps":[{"date":"...","text":"...","done":true}]}  # 2-4 steps
   {"type":"compare",   "kicker":"...", "title":"...", "cards":[{"label":"...","head":"...","body":"..."}, {...}]}  # exactly 2
@@ -39,7 +40,7 @@ FONTS = ROOT / "fonts"
 
 COBALT, COBALT_DK, AMBER = "#1B3FA6", "#132E7A", "#F2A93B"
 INK, PAPER, MUTED, LINE = "#14203D", "#F6F4EF", "#5B6680", "#DCD8CE"
-DARK_TYPES = {"cover", "stat", "view"}
+DARK_TYPES = {"cover", "stat", "view", "photo"}
 NE_DIGITS = str.maketrans("0123456789", "०१२३४५६७८९")
 
 
@@ -112,8 +113,16 @@ h2{{font-weight:800;font-size:{px(62)};line-height:1.15;letter-spacing:-.01em;ma
 """
 
 
-def slide_html(s, fmt):
+def slide_html(s, fmt, base=None):
     ty = s["type"]
+    if ty == "photo":
+        src = (base / s["src"]).resolve() if base else pathlib.Path(s["src"]).resolve()
+        k = FORMATS[fmt]["k"]
+        return (f'<h1 style="font-size:{round(76*k)}px">{t(s["title"])}</h1>'
+                f'<div style="margin:{round(36*k)}px 0;border-radius:28px;overflow:hidden;border:6px solid rgba(255,255,255,.9);'
+                f'box-shadow:0 18px 40px rgba(0,0,0,.35)"><img src="file://{src}" style="display:block;width:100%;'
+                f'max-height:{round(620*k)}px;object-fit:cover"></div>'
+                + (f'<p class="lead" style="margin-top:0">{t(s.get("sub"))}</p>' if s.get("sub") else ""))
     if ty == "cover":
         return f'<div class="rule"></div><h1>{t(s["title"])}</h1>' + (f'<p class="lead">{t(s.get("sub"))}</p>' if s.get("sub") else "")
     if ty == "bullets":
@@ -153,7 +162,7 @@ def slide_html(s, fmt):
     raise ValueError(f"unknown slide type: {ty}")
 
 
-def page(s, idx, total, fmt, series):
+def page(s, idx, total, fmt, series, base=None):
     f = FORMATS[fmt]
     cls = "dark" if s["type"] in DARK_TYPES else "light"
     counter = f"{idx:02d} / {total:02d}" if not f["nums"] else f"{idx} / {total}".translate(NE_DIGITS)
@@ -161,7 +170,7 @@ def page(s, idx, total, fmt, series):
     logo = LOGO.replace("{s}", str(f["logo"])).replace("{fill}", COBALT_DK if cls == "dark" else COBALT)
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{css(f)}</style></head><body>'
             f'<div class="slide {cls}"><div class="top"><span>{t(series)}</span><span>{counter}</span></div>'
-            f'<div class="body">{slide_html(s, fmt)}</div>'
+            f'<div class="body">{slide_html(s, fmt, base)}</div>'
             f'<div class="foot"><div class="brand">{logo}<span>Ishaan Pranava</span></div><span style="font-weight:600">{swipe}</span></div>'
             f'</div></body></html>')
 
@@ -184,7 +193,7 @@ async def main(spec_path):
             pg = await browser.new_page(viewport={"width": f["w"], "height": f["h"]})
             for i, s in enumerate(slides, 1):
                 tmp = out_dir / f".{fmt}-{i:02d}.html"
-                tmp.write_text(page(s, i, len(slides), fmt, spec.get("series", {}).get(fmt, "")), encoding="utf-8")
+                tmp.write_text(page(s, i, len(slides), fmt, spec.get("series", {}).get(fmt, ""), out_dir), encoding="utf-8")
                 await pg.goto(f"file://{tmp}")
                 await pg.evaluate("document.fonts.ready")
                 await pg.wait_for_timeout(150)
