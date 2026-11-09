@@ -9,7 +9,8 @@ Original code for Ishaan Pranava map explainer videos (vertical 1080×1920, 30 f
 | `tts_gemini.py` | Nepali voiceover via Gemini API, news-anchor style (`style_news_anchor.txt`) |
 | `mix_audio.py` | Trim speech, group sub-keys into scenes, `audio/durations.json`, `audio/voice.wav` (−14 LUFS), silent disclaimer scene |
 | `assemble.sh` | Join scene files + voice into the final MP4 |
-| `data/region.json` | Natural Earth 1:10m admin-0, Nepal POV, simplified (public domain) |
+| `data/region.json` | Natural Earth 1:10m admin-0, Nepal POV (public domain); **NPL replaced with the official चुच्चे map** (incl. Kalapani, Lipulekh, Limpiyadhura) from the npm package nepali-geo-pro-max 1.0.0 (MIT); `ZZFILL` = borderless land filler |
+| `data/nepal_provinces_chuche.geojson` | 7 provinces, same source — for province maps |
 | `fonts/` | Mukta (SIL OFL 1.1) |
 
 ## Steps (work folder outside the repo)
@@ -26,5 +27,6 @@ Original code for Ishaan Pranava map explainer videos (vertical 1080×1920, 30 f
 - Colours: cobalt `#2340C9` subject, amber `#FFB547` story places and numbers, grey for paused/old values.
 - Last scene: 1-second disclaimer card, no voice.
 
-## Known limits
-- `data/region.json` does **not** match Nepal's official 2020 map (Lipulekh, Kalapani, Limpiyadhura). Replace the NPL geometry with the Survey Department boundary when available.
+## Map notes
+- Nepal outline follows the post-May-2020 official map (चुच्चे नक्सा). The package does not name its upstream source; spot-check against the Survey Department map before high-stakes use.
+- Neighbours' faint borders are drawn under highlighted countries, so no foreign line crosses Nepal.

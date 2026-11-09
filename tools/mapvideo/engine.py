@@ -89,15 +89,21 @@ def draw_map(cam, fills, dim=0.0, glow=None):
         gl = Image.new("RGBA", (W, H), COBALT_L + (0,)); gl.putalpha(m.filter(ImageFilter.GaussianBlur(26)).point(lambda v: int(v * 0.85)))
         img.alpha_composite(gl)
     lay = Image.new("RGBA", (W * SS, H * SS), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    hlset = {a for a, (c_, al_) in fills.items() if al_ > 0.05}
+    for a in vis:  # faint borders first, so highlighted countries cover neighbours' lines
+        if a in hlset or a.startswith("ZZ"): continue
+        for p in SHAPES[a]:
+            pts = tuple(map(tuple, cam.xy(p[0], SS)))
+            d.line(pts + (pts[0],), fill=(255, 255, 255, 46), width=SS, joint="curve")
     for a, (col, al) in fills.items():
         if al <= 0 or a not in SHAPES: continue
         for p in SHAPES[a]:
             d.polygon(tuple(map(tuple, cam.xy(p[0], SS))), fill=col + (int(255 * al),))
     for a in vis:
-        hl = a in fills and fills[a][1] > 0.05
+        if a not in hlset: continue
         for p in SHAPES[a]:
             pts = tuple(map(tuple, cam.xy(p[0], SS)))
-            d.line(pts + (pts[0],), fill=(255, 255, 255, 240 if hl else 46), width=(3 * SS if hl else SS), joint="curve")
+            d.line(pts + (pts[0],), fill=(255, 255, 255, 240), width=3 * SS, joint="curve")
     img.alpha_composite(lay.resize((W, H), Image.LANCZOS))
     if dim > 0:
         img = Image.blend(img, Image.new("RGBA", (W, H), OCEAN_T + (255,)), dim)
