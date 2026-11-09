@@ -4,6 +4,7 @@ Public image hosting for Ishaan Pranava social posts (Instagram and TikTok carou
 Images here are published on social media, so they are public by design.
 
 - `tools/render.py` — renders carousel slides from `posts/<date>/slides.json`
+- `tools/mapvideo/` — map-story video engine, Gemini TTS voiceover, audio mix and assembly (see its README)
 - `tools/fonts/` — Inter and Mukta (SIL Open Font License)
 - `posts/<YYYY-MM-DD>/` — one folder per day: `slides.json`, `ig-XX.jpg`, `tt-XX.jpg`
 - `posts/log.md` — topics already covered, newest first
