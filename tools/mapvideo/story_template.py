@@ -217,6 +217,10 @@ def frame(sc, t):
             T(d, (L + 65, y + 65), it.get("n", ""), F("ExtraBold", 48), fill=DARK, anchor="mm")
             for i, ln in enumerate(lines): T(d, (L + 130, y + 26 + 56 * i), ln, f)
             h = max(h, 130)
+        elif k == "ill":  # flat illustration panel drawn by illus.py in the work folder (see icons.py)
+            h = it.get("h", 420); panel(d, (L, y, RX, y + h), alpha=0.95)
+            put(img, lay, a, dy=(1 - eout(a)) * 18); a = 0
+            ILL[it["name"]](img, sc, t, (L, y, RX, y + h), at)
         elif k == "note":
             f = F("ExtraBold", 36); lines = wrapt(it["text"], f, RX - L - 60); h = 54 * len(lines) + 40
             d.rounded_rectangle((L, y, RX, y + h), 20, fill=col + (255,))
@@ -229,6 +233,11 @@ def frame(sc, t):
         srcline(img, lines, ease(t / 0.6), y=min(max(y + 6, 1300), 1560 - 38 * len(lines)))
     return img
 
+
+try:
+    sys.path.insert(0, ROOT); from illus import ILL
+except ImportError:
+    ILL = {}
 
 def render_scene(sc):
     n = int(round(AUD[sc]["scene"] * FPS)); out = f"{ROOT}/scenes/{sc}.mp4"; tmp = out[:-4] + ".tmp.mp4"

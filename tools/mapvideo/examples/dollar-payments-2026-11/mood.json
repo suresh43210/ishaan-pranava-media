@@ -1,0 +1,13 @@
+{
+ "c01": {"chords": ["Am", "F", "C", "G"], "bpm": 78, "arp": 0.8, "steps": 4, "pattern": [0,2,1,2], "bright": 0.35, "bass": 0.6},
+ "c02": {"chords": ["Fsus2", "Gsus4"], "bpm": 78, "bright": 0.3, "arp": 0.5, "steps": 2, "pattern": [2,1]},
+ "c03": {"chords": ["C", "G", "Am", "F"], "bpm": 88, "arp": 1.0, "bright": 0.55, "bass": 0.8, "kick": 0.6},
+ "c04": {"chords": ["C", "G", "Am", "F"], "bpm": 92, "arp": 1.0, "bright": 0.6, "bass": 0.9, "kick": 0.8},
+ "c05": {"chords": ["Fmaj7", "C", "G", "Am"], "bpm": 90, "arp": 1.0, "bright": 0.6, "bass": 0.8, "kick": 0.6},
+ "c06": {"chords": ["Dm", "Bb", "Gm", "A"], "bpm": 76, "bright": 0.25, "drone": 0.8, "arp": 0.4, "steps": 4, "pattern": [0,1,2,1], "gain": 0.9},
+ "c07": {"chords": ["Dm", "Bb", "Gm", "A"], "bpm": 72, "bright": 0.2, "drone": 1.0, "arp": 0.3, "steps": 2, "pattern": [0,2], "gain": 0.9},
+ "c08": {"chords": ["F", "G", "C", "Am"], "bpm": 92, "arp": 1.1, "bright": 0.7, "bass": 0.9, "kick": 0.7},
+ "c09": {"chords": ["Am", "Esus4"], "bpm": 76, "bright": 0.3, "arp": 0.5, "steps": 4, "pattern": [0,2,1,2], "drone": 0.5},
+ "c10": {"chords": ["C", "Am", "F", "G"], "bpm": 84, "arp": 0.9, "bright": 0.55, "bass": 0.8, "kick": 0.4},
+ "c11": {"chords": ["F", "G", "Cadd9", "Cadd9"], "bpm": 96, "arp": 1.1, "bright": 0.75, "bass": 1.0, "kick": 0.8}
+}

@@ -1,0 +1,13 @@
+{
+ "c01": "storytelling and empathetic, a little slower and softer, as if describing a real person's struggle; let the last sentence land with quiet frustration",
+ "c02": "curious and inviting; rising intonation on the question; a short pause before the last sentence",
+ "c03": "clear, factual and authoritative; steady newsroom pace; firm emphasis on the numbers",
+ "c04": "crisp and brisk, like announcing a policy change; give each number its own weight; slightly lower and more serious on the final 'but' sentence",
+ "c05": "practical and positive, explaining a new solution step by step; a careful, cautionary turn on the last sentence about KYC and limits",
+ "c06": "serious and cautionary, slightly lower pitch and slower pace; measured, not alarmist",
+ "c07": "grave and analytical; a probing question at the start; calm, thoughtful delivery when giving the personal view at the end",
+ "c08": "hopeful and slightly upbeat, a sense of doors starting to open; still professional",
+ "c09": "restrained and matter-of-fact with mild skepticism; slower on 'distance between announcement and implementation'",
+ "c10": "thoughtful, confident and advisory, speaking peer-to-peer to bankers; warm conviction on the last sentence",
+ "c11": "warm and direct, speaking straight to the viewer; friendly invitation, energetic but not shouting"
+}
